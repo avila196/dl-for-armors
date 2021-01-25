@@ -50,7 +50,8 @@ The previous pseudo-code explanation has the actual code stated in the wave_prop
 
 #### Controller
 The controller, in programming terms, is the entity responsible of making the model work with the user defined inputs and the visual entities (if any). In this context, two main controllers were defined in order to simulate the stress wave propagations: one controller for a single composite and one controller for multiple composites (for comparison purposes).
-* Single composite: Carry out an analysis for a single composite is the core idea of the present work. The code not only provides graphical results for the composites, but it also performs an automated analysis and gives back the results stating if the composite is promising and satisfies the mechanical expected behavior for the current conditions, or if the composite is not promising and what are the layers that are not enough from a mechanical perspective. The menu the code allows is presented as follows.
+##### Single composite
+Carry out an analysis for a single composite is the core idea of the present work. The code not only provides graphical results for the composites, but it also performs an automated analysis and gives back the results stating if the composite is promising and satisfies the mechanical expected behavior for the current conditions, or if the composite is not promising and what are the layers that are not enough from a mechanical perspective. The menu the code allows is presented as follows.
 ![](menu_single.png)
 
 As it can be seen, the first option available, before the core analysis options, is the ability to store the results (stress mesh of each of the layers) into an Excel file (.xlsx). This allows further post-processing on different tools or programs such as Excel itself, data science environments or databases exports. After this main option, 8 different options are considered and explained as follows.
@@ -71,7 +72,8 @@ As it can be seen, the first option available, before the core analysis options,
 
 **EXIT:** This allows the user to correctly exit the simulation in progress. This option does consider any kind of persistence of the state of the simulation, all the results are removed from memory unless the user manually store the figures and plots.
 
-* Multiple composites: Rather than just simulating one single composite and analyzing it in depth, the designer should be able to compare the behavior for multiple composites as another tool for the design, in this case the ability to choose the composite with best mechanical behavior.
+##### Multiple composites
+Rather than just simulating one single composite and analyzing it in depth, the designer should be able to compare the behavior for multiple composites as another tool for the design, in this case the ability to choose the composite with best mechanical behavior.
 
 #### Input file format
 The code developed is intended to be decoupled in terms of the model, the controller and the input files/configurations of the composites. As shown before, both model and controllers are independent from each other and they perform the specific tasks needed on each entity. Now, regarding the input configurations, and making the input the most user-friendly (avoiding unnecessary duplicate inputs for different simulations), a text format was defined, and a sample format is presented in *models/data*. Inside the file, any line that starts with the character <#> is considered as a comment and the code will not parse it as part of the input. The format is composed mainly by three sections:
