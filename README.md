@@ -56,21 +56,21 @@ Carry out an analysis for a single composite is the core idea of the present wor
 
 As it can be seen, the first option available, before the core analysis options, is the ability to store the results (stress mesh of each of the layers) into an Excel file (.xlsx). This allows further post-processing on different tools or programs such as Excel itself, data science environments or databases exports. After this main option, 8 different options are considered and explained as follows.
 
-**T VS STRESS:** This allows the user to plot a time-stress graph for any of the layers of the composite.
+* T VS STRESS: This allows the user to plot a time-stress graph for any of the layers of the composite.
  
-**H VS STRESS:** This allows the user to plot a thickness-stress graph for any of the layers of the composite.
+* H VS STRESS: This allows the user to plot a thickness-stress graph for any of the layers of the composite.
  
-**T VS MAX STRESS (TENSION):** This allows the user to plot a thickness-stress graph, where the stresses to plot are the max tension stresses for each time on any point of the layer, for any of the layers of the composite.
+* T VS MAX STRESS (TENSION): This allows the user to plot a thickness-stress graph, where the stresses to plot are the max tension stresses for each time on any point of the layer, for any of the layers of the composite.
 
-**T VS MAX STRESS (COMPRESSION):** This allows the user to plot a thickness-stress graph, where the stresses to plot are the max compression stresses for each time on any point of the layer, for any of the layers of the composite.
+* T VS MAX STRESS (COMPRESSION): This allows the user to plot a thickness-stress graph, where the stresses to plot are the max compression stresses for each time on any point of the layer, for any of the layers of the composite.
 
-**ALL LAYERS VS STRESS (ALL TIMES):** This allows the user to plot a width-stress graph, where the width is the total width of the composite, all layers together, allowing to see the silhouette of the main behavior of the stress waves.
+* ALL LAYERS VS STRESS (ALL TIMES): This allows the user to plot a width-stress graph, where the width is the total width of the composite, all layers together, allowing to see the silhouette of the main behavior of the stress waves.
 
-**ALL LAYERS VS HYDROSTATIC STRESS (ALL TIMES):** This allows the user to plot a width-stress graph, where the width is the total width of the composite, and the hydrostatic stress is considered given its local confinement, allowing to see the silhouette of the main behavior of the stress waves.
+* ALL LAYERS VS HYDROSTATIC STRESS (ALL TIMES): This allows the user to plot a width-stress graph, where the width is the total width of the composite, and the hydrostatic stress is considered given its local confinement, allowing to see the silhouette of the main behavior of the stress waves.
 
-**RUN ANALYSIS ON COMPOSITE:** This allows the user to run a fully automated analysis on the composite, in order to determine if the composite does satisfy or does not the conditions to be considered as a valid armour regarding the stress waves on it.
+* RUN ANALYSIS ON COMPOSITE: This allows the user to run a fully automated analysis on the composite, in order to determine if the composite does satisfy or does not the conditions to be considered as a valid armour regarding the stress waves on it.
 
-**EXIT:** This allows the user to correctly exit the simulation in progress. This option does consider any kind of persistence of the state of the simulation, all the results are removed from memory unless the user manually store the figures and plots.
+* EXIT: This allows the user to correctly exit the simulation in progress. This option does consider any kind of persistence of the state of the simulation, all the results are removed from memory unless the user manually store the figures and plots.
 
 ##### Multiple composites
 Rather than just simulating one single composite and analyzing it in depth, the designer should be able to compare the behavior for multiple composites as another tool for the design, in this case the ability to choose the composite with best mechanical behavior.
