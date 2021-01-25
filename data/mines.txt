@@ -1,0 +1,45 @@
+## Input file for the Elastic Wave Analysis on a Single Composite
+## The file describes the number of layers for composite, the description of each layer,
+## the total running time, the time step to use (optional) and the initial conditions (initial waves)
+## Next line: number of layers for composite N
+3
+## Next N lines:
+## For each line, describe the composite on the form
+##   <h>,<E>,<rho>,<m>,<v>,<sf_t>t,<sf_c>c,<rel>r
+## where h -> width (in mm), E -> Young Modulus (in Pa), rho -> density (in kg/m^3), m -> mass (in kg), v -> Poisson's ratio, 
+## sf_t -> Failure tension stress (optional, in MPa), sf_c -> Failure compression stress (optional, in MPa), 
+## rel -> relevant for max values (optional, 0 -> false, 1 -> true)
+## Examples:
+## 11,2000000000,11300,12300,0.33,106c
+## 11,2000000000,11300,12300,0.33,106t,0r
+## 11,2000000000,11300,12300,0.33,106t,100c,1r
+## 11,2000000000,11300,12300,0.33
+5,206800000000,7850,1,0.33,1069e6t,0r
+2.5,8500000000,1783,1,0.33,200e6t
+17.8,310000000000,3500,1,0.33,3000e6t
+#3.7,69000000000,1635,1,0.33,241t
+#14.2,8500000000,1783,1,0.33,179t
+## Next line: r or t, total running time or num of reverberations, and time step (optional, if not provided 0.01 will be used)
+## r or t-> reverberations (round trip) or time identification chars
+## Examples:
+## t,50,0.001
+## t,40
+## r,1,0.01
+t,10,0.001
+## Next line: number of initial waves to consider W
+2
+## Next W lines:
+## Each next line describes the initial condition for a wave to create with the form
+##   <layer_num>,<pos>,<sigma>,s
+## or the form
+##   <layer_num>,<pos>,<velocity>,v
+## where layer_num -> number of layer where it belongs [1,N], 
+## pos -> initial position of wave (B for beginning, E for end) in layer, 
+## sigma -> stress value in Pa (+ for tension, - for compression)
+## velocity -> impact velocity of projectile (in m/s)
+## s or v -> stress or velocity identification chars
+## Examples:
+## 2,E,-1000000,s
+## 3,B,100,v
+1,E,500,v
+2,B,500,v

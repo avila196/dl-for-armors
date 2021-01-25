@@ -1,0 +1,51 @@
+## Input file for the Elastic Wave Analysis on a Single Composite
+## NOTE: For number inputs, scientific notation is accepted (i.e. "1.5e9")
+## The file describes the number of layers for composite, the description of each layer,
+## the total running time, the time step to use (optional) and the initial conditions (initial waves)
+## Next line: number of layers for composite N
+9
+## Next N lines:
+## For each line, describe the composite on the form
+##   <h>,<E>,<rho>,<m>,<v>,<sf_t>t,<sf_c>c,<rel>r
+## where h -> width (in mm), E -> Young Modulus (in Pa), rho -> density (in kg/m^3), m -> mass (in kg), v -> Poisson's ratio, 
+## sf_t -> Failure tension stress (optional, in Pa), sf_c -> Failure compression stress (optional, in Pa), 
+## rel -> relevant for max values (optional, 0 -> false, 1 -> true)
+## NOTE: If <rel> is given, at least one sf has to be given.
+## Examples:
+## 11,2000000000,11300,12300,0.33,106e6c
+## 11,2000000000,11300,12300,0.33,106e6t,0r
+## 11,2000000000,11300,12300,0.33,106e6t,100e6c,1r
+## 11,2000000000,11300,12300,0.33
+18.75,14000000000,11340,12300,0.431,2069e6t,0r
+5,70000000000,2500,12000,0.22,300e6t,0r
+0.65,910e6,1070,12000,0.3,450e6t,0r
+2,70000000000,2500,12000,0.22,300e6t,1r
+0.38,91000000,1070,12000,0.3,450e6t,0r
+6,70000000000,2500,12000,0.22,300e6t,1r
+0.62,55000000,1070,12000,0.3,450e6t,0r
+0.62,55000000,1070,12000,0.3,450e6t,0r
+2,2350000000,1200,12000,0.3,278e6t,0r
+## Next line: r or t, total running time or num of reverberations, and time step (optional, if not provided 0.01 will be used)
+## r or t-> reverberations (round trip) or time identification chars
+## Examples:
+## t,50,0.001
+## t,40
+## r,1,0.01
+r,1
+## Next line: number of initial waves to consider W
+2
+## Next W lines:
+## Each next line describes the initial condition for a wave to create with the form
+##   <layer_num>,<pos>,<sigma>,s
+## or the form
+##   <layer_num>,<pos>,<velocity>,v
+## where layer_num -> number of layer where it belongs [1,N], 
+## pos -> initial position of wave (B for beginning, E for end) in layer, 
+## sigma -> stress value in Pa (+ for tension, - for compression)
+## velocity -> impact velocity of projectile (in m/s)
+## s or v -> stress or velocity identification chars
+## Examples:
+## 2,E,-1000000,s
+## 3,B,100,v
+1,E,-436,v
+2,B,-436,v
