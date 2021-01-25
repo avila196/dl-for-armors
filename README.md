@@ -52,7 +52,7 @@ The previous pseudo-code explanation has the actual code stated in the wave_prop
 The controller, in programming terms, is the entity responsible of making the model work with the user defined inputs and the visual entities (if any). In this context, two main controllers were defined in order to simulate the stress wave propagations: one controller for a single composite and one controller for multiple composites (for comparison purposes).
 ##### Single composite
 Carry out an analysis for a single composite is the core idea of the present work. The code not only provides graphical results for the composites, but it also performs an automated analysis and gives back the results stating if the composite is promising and satisfies the mechanical expected behavior for the current conditions, or if the composite is not promising and what are the layers that are not enough from a mechanical perspective. The menu the code allows is presented as follows.
-![](menu_single.png)
+![](imgs/menu_single.png)
 
 As it can be seen, the first option available, before the core analysis options, is the ability to store the results (stress mesh of each of the layers) into an Excel file (.xlsx). This allows further post-processing on different tools or programs such as Excel itself, data science environments or databases exports. After this main option, 8 different options are considered and explained as follows.
 
@@ -96,9 +96,9 @@ This new approach proposed is complimentary to the main model developed and it i
 
 #### Baseline DL training
 The baseline model was trained on a sample dataset of 1782 configurations and the following DL architecture. 
-![](dl_arch.png)
+![](imgs/dl_arch.png)
 
 Once the DL model was completely trained with 80% of the input data, for 20 epochs and batch sizes of 32, the accuracy in the training dataset was 90.81% (expected to be high as there training dataset is not very large) and the accuracy in the validation dataset was 93.26%. The next figure shows the history of the accuracy along the epochs defined. 
-![](dl.png)
+![](imgs/dl.png)
 
 This accuracy is considerably high for the simplicity of the DL model and it leads to the idea of a well-tuned model that can be improved if a more complex Neural Network structure is considered and the input dataset has at least 50,000 configurations with more features changing in between them. Nevertheless, these results are a great baseline limit and the model predicts very accurate the response on unseen configurations. As mentioned before, this model can simplify the process of discarding configurations, letting the user/designer to focus on composites that are more prone to be reliable armour configurations. The next step then is to pass these “good” composites through the core analysis described in Phase 2.
