@@ -6,11 +6,11 @@ A general model was defined in order to simulate the behavior of any composite, 
 *	The propagation of the stress waves, incident and transmitted stresses, is due totally to the change on the impedance of each of the layers’ interfaces.
 *	The projectile is assumed to remain still after it impacts the composite.
 *	For every layer (material), the following properties are needed:
- *	Thickness
- *	Young’s Modulus
- *	Density
- *	Mass
- *	Poisson’s ration
+    *	Thickness
+    *	Young’s Modulus
+    *	Density
+    *	Mass
+    *	Poisson’s ration
 *	The impact is considered to happen locally on a given portion of the surface, then the stress propagation occurs for each of the layers in local confinement. 
 
 ### PHASE 1: Machine learning techniques to predict behavior and response
