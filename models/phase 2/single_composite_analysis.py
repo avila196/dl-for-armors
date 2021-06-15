@@ -27,7 +27,7 @@ Function that simulates the wave propagation on a single composite
 '''
 def simulate():
     #Input file to read
-    filename = "./data/" + input("Enter input file name: ")
+    filename = "../../data/" + input("Enter input file name: ")
     #Loop through file to construct simulation
     with open(filename,"r") as file:
         lines = file.readlines()
